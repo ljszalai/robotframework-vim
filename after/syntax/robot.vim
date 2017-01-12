@@ -29,13 +29,13 @@ syn match robotEllipsis             display "\.\.\."
 syn match robotSpecial              display "\\\(\${.*}\|\\\|#\|[n|r|t]\)"
 " As variables may be used next to each other, do a non-greedy match.
 " Alternatively, match only alphanumeric chars inside brackets.
-syn match robotVariable             "\(\$\|@\){.\{-}}"
+syn match robotVariable             "\(\$\|@\|&\|%\){.\{-}}"
 " This is by far the most stupid regex you'll see in here..
 syn match robotPath                 display "\(\.\{1,2}\/\)\=\(\(\h\|\d\)\+\/\)\+\(\(\h\|\d\)\+\.\h\+\)\{,1}$"
 " Operators
 syn match robotOperator             "==\|="
 " Table headers
-syn match robotTable                "\c^\(\*\+\)\s*\(settings\|variables\|test cases\|\(user \)\?keywords\)\s*\1$"
+syn match robotTable                "\c^\(\*\+\)\s*\(settings\|variables\|test case\|test cases\|\(user \)\?keywords\)\s*\1.*$"
 " Common settings
 syn match robotCommonSet            "\c\[\(Documentation\|Timeout\)\]"
 " Keyword settings
@@ -75,7 +75,7 @@ syn match builtInLibrary            "\c\<\(Wait Until Keyword Succeeds\|Variable
 " Regions
 "------------------------------------------------------------------------
 " Single-line comments. Are there multi-line comments?
-syn region robotComment     display start="#" excludenl end="$"
+syn region robotComment     display start="^#" excludenl end="$"
 syn region robotString      start="\"" excludenl end="\""
 
 "------------------------------------------------------------------------

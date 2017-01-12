@@ -23,11 +23,12 @@ let s:cpo_save=&cpo
 set cpo&vim
 
 " Try to guess when dealing with .html, .txt, or .rst files:
-au BufNewFile,BufRead *.txt call s:FTrobot()
 au BufNewFile,BufRead *.rst call s:FTrobot()
+au BufNewFile,BufRead *.txt call s:FTrobot()
 au BufNewFile,BufRead *.html call s:FTrobot()
 " No resorting to heuristics for .robot files:
 au BufNewFile,BufRead *.robot setlocal filetype=robot
+au BufNewFile,BufRead *.tsv setlocal filetype=robot
 
 func! s:FTrobot()
     let b:topl = getline(1)
