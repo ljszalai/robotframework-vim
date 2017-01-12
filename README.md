@@ -1,3 +1,6 @@
+This repository has been cloned from https://github.com/mfukar/robotframework-vim 
+and I made only some customization on it for my purposes with maximum respect to work of mfukar.
+
 Vim plugins for development with Robot framework
 
 FUNCTIONALITY
@@ -9,7 +12,7 @@ INSTALLATION
 ------------------------------------------
 Quickly install by:
 
- * git clone git://github.com/mfukar/robotframework-vim.git
+ * git clone git://github.com/ljszalai/robotframework-vim.git
  * cd robotframework-vim && cp -R * ~/.vim/
 
 USAGE
